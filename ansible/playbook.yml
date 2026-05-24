@@ -1,0 +1,21 @@
+---
+- name: Setup Olive Art Server
+  hosts: web
+  become: yes
+
+  tasks:
+
+    - name: Update packages
+      apt:
+        update_cache: yes
+
+    - name: Install nginx
+      apt:
+        name: nginx
+        state: present
+
+    - name: Ensure nginx running
+      service:
+        name: nginx
+        state: started
+        enabled: yes
