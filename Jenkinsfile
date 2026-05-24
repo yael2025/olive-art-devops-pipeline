@@ -15,34 +15,34 @@ pipeline {
         }
 
         stage('Terraform Init') {
-
-            steps {
-
-                bat 'terraform init'
-
-            }
-
-        }
+    steps {
+        bat 'wsl bash -lc "cd ~/olive-art-devops && terraform init"'
+    }
+}
 
         stage('Terraform Apply') {
-
-            steps {
-
-                bat 'terraform apply -auto-approve'
-
-            }
-
-        }
+    steps {
+        bat 'wsl bash -lc "cd ~/olive-art-devops && terraform apply -auto-approve"'
+    }
+}stage('Terraform Apply') {
+    steps {
+        bat 'wsl bash -lc "cd ~/olive-art-devops && terraform apply -auto-approve"'
+    }
+}stage('Terraform Apply') {
+    steps {
+        bat 'wsl bash -lc "cd ~/olive-art-devops && terraform apply -auto-approve"'
+    }
+}stage('Terraform Apply') {
+    steps {
+        bat 'wsl bash -lc "cd ~/olive-art-devops && terraform apply -auto-approve"'
+    }
+}
 
         stage('Run Ansible') {
-
-            steps {
-
-                bat 'wsl ansible-playbook -i ansible/inventory.ini ansible/playbook.yml'
-
-            }
-
-        }
+    steps {
+        bat 'wsl bash -lc "cd ~/olive-art-devops && ansible-playbook -i ansible/inventory.ini ansible/playbook.yml"'
+    }
+}
 
         stage('Validation') {
 
