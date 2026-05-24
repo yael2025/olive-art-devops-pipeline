@@ -18,7 +18,7 @@ pipeline {
 
             steps {
 
-                sh 'terraform init'
+                bat 'terraform init'
 
             }
 
@@ -28,7 +28,7 @@ pipeline {
 
             steps {
 
-                sh 'terraform apply -auto-approve'
+                bat 'terraform apply -auto-approve'
 
             }
 
@@ -38,7 +38,7 @@ pipeline {
 
             steps {
 
-                sh 'ansible-playbook -i ansible/inventory.ini ansible/playbook.yml'
+                bat 'wsl ansible-playbook -i ansible/inventory.ini ansible/playbook.yml'
 
             }
 
@@ -48,7 +48,7 @@ pipeline {
 
             steps {
 
-                sh 'curl http://13.61.33.202'
+                bat 'curl http://13.61.33.202'
 
             }
 
