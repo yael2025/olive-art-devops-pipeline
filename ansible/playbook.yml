@@ -4,7 +4,6 @@
   become: yes
 
   tasks:
-
     - name: Update packages
       apt:
         update_cache: yes
@@ -19,3 +18,9 @@
         name: nginx
         state: started
         enabled: yes
+
+    - name: Deploy Olive Art website
+      copy:
+        src: ../website/index.html
+        dest: /var/www/html/index.html
+        mode: '0644'
