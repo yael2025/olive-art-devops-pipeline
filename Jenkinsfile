@@ -28,7 +28,16 @@ pipeline {
 
         stage('Validation') {
             steps {
-                bat 'curl http://13.61.33.202'
+                bat 'curl -I http://13.61.33.202'
+            }
+        }
+
+        stage('Website URL') {
+            steps {
+                echo '================================'
+                echo 'OLIVE ART WEBSITE READY'
+                echo 'http://13.61.33.202'
+                echo '================================'
             }
         }
     }
